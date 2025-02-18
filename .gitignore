@@ -1,0 +1,42 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Archivos de entorno (credenciales, configuraciones sensibles)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Logs y archivos temporales
+logs/
+*.log
+debug.log
+error.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Caché y archivos de compilación
+dist/
+build/
+.cache/
+tmp/
+temp/
+
+# Configuración de IDEs y editores de código
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Subidas de archivos (si almacenas imágenes localmente)
+uploads/
+
+# Directorios específicos de sistemas operativos
+.DS_Store
+Thumbs.db
