@@ -14,6 +14,8 @@ app.set('port', process.env.PORT || 3000);
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
+app.use('/api', require('./routes/Empleado.routes'));
+app.use('/api', require('./routes/Login.routes'));
 
 //listen
 app.listen(app.get('port'), () => {
