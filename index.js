@@ -16,6 +16,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/api', require('./routes/Empleado.routes'));
 app.use('/api', require('./routes/Login.routes'));
+app.use('/api', require('./routes/productos.routes'));
 
 //listen
 app.listen(app.get('port'), () => {
