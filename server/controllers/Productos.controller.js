@@ -58,6 +58,29 @@ productoCtrl.getAllProduct = async(req, res)=>{
     }
 }
 
+productoCtrl.deleteOneProduct = async(req, res) =>{
+   try {
+    const { id } = req.params;
+    const data = await producto.findById( id )
+
+    if(!data){
+        res.status(404).json({message: "producto no encontrado"});
+        return;
+    }
+
+    for(const imageUrl of data.images){
+        const publicId = imageUrl.split('/').pop().split('.')[0];
+        await cloudinaryService.deleteImage(publicId);
+    }
+
+    await producto.findByIdAndDelete(id)
+    res.status(200).json({message: "El producto a sido eliminado"})
+   } catch (error) {
+    res.status(500).json({message: "Error de conexion al servidor"})
+    console.error("Error al eliminar producto:", error);
+   }
+}
+
 module.exports = productoCtrl;
 
 

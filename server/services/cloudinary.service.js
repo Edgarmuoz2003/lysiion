@@ -22,6 +22,16 @@ async function uploadImage(file) {
     
 };
 
+async function deleteImage(publicId){
+    try {
+        await cloudinary.uploader.destroy(publicId);
+        console.log(`se a eliminado la imagen ${publicId} de cloudinary`)
+    } catch (error) {
+        console.log("error al elimanar la imagen de cloudinary" + error)
+    }
+}
+
 module.exports = {
-    uploadImage
+    uploadImage,
+    deleteImage
 };

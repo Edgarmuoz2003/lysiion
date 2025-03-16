@@ -1,15 +1,43 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import CreateProductsFOrm from "../components/CreateProductsForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import UseProducts from "../hooks/products/UseProducts";
 
 function AdminProductos() {
   const [vistaActual, setVistaActual] = useState(null);
-  const { productos } = UseProducts();
+  const {
+    productos,
+    error,
+    setError,
+    message,
+    setMessage,
+    deleteProducts,
+    loading,
+  } = UseProducts();
 
   const changeView = (view) => {
     setVistaActual(view);
   };
+  useEffect(() => {
+    if (message) {
+      const timer = setTimeout(() => {
+        setMessage(""); // Resetea el mensaje después de 3 segundos
+      }, 3000);
+
+      return () => clearTimeout(timer); // Limpia el timer si el componente se desmonta
+    }
+  }, [message, setMessage]);
+
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => {
+        setError(""); // Resetea el mensaje después de 3 segundos
+      }, 3000);
+
+      return () => clearTimeout(timer); // Limpia el timer si el componente se desmonta
+    }
+  }, [error, setError]);
+
   const handleShowVIew = () => {
     switch (vistaActual) {
       case "crear":
@@ -21,7 +49,7 @@ function AdminProductos() {
               <Container>
                 <Row>
                   {productos.map((producto) => (
-                    <Col lg={4} key={producto.id}>
+                    <Col lg={4} key={producto._id}>
                       <div className="product-card ">
                         <img
                           src={producto.images[0]}
@@ -36,8 +64,33 @@ function AdminProductos() {
                       </div>
 
                       <p>{producto.nombre}</p>
+                      <div>
+                        <Button
+                          className="btn-danger"
+                          onClick={() => deleteProducts(producto._id)}
+                        >
+                          eliminar
+                        </Button>
+                      </div>
                     </Col>
                   ))}
+                  <div className="text-center">
+                    <p style={{ fontSize: "1.2rem", fontWeight: "bold" }}>
+                      {loading && "eliminando..."}
+                    </p>
+
+                    {message && (
+                      <p style={{ fontSize: "1.2rem", fontWeight: "bold" }}>
+                        {message}
+                      </p>
+                    )}
+
+                    {error && (
+                      <p style={{ fontSize: "1.2rem", fontWeight: "bold" }}>
+                        {error}
+                      </p>
+                    )}
+                  </div>
                 </Row>
               </Container>
             ) : (
