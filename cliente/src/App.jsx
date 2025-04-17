@@ -7,6 +7,8 @@ import ProtectedRoutes from "./components/ProtectedRoutes";
 import AdminProductos from "./pages/AdminProductos";
 import VistaProductos from "./pages/VistaProductos";
 import ProductProvider from "./hooks/products/ProductProvider";
+import Detalle from "./components/Detalle";
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/:gender/:category" element={<VistaProductos />} />
+            <Route path="/Detalle" element={<Detalle />} />
             <Route element={<ProtectedRoutes />}>
               <Route path="/productos" element={<AdminProductos />} />
             </Route>

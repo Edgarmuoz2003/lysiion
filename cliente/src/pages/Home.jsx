@@ -28,6 +28,7 @@ function Home() {
               </div>
 
               <p>{producto.nombre}</p>
+              {console.log(producto.images[0])}]
             </Col>
           ))}
         </Row>
