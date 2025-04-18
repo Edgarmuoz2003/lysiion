@@ -2,6 +2,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import CreateProductsFOrm from "../components/CreateProductsForm";
 import { useState, useEffect } from "react";
 import UseProducts from "../hooks/products/UseProducts";
+import { Link } from "react-router-dom";
 
 function AdminProductos() {
   const [vistaActual, setVistaActual] = useState(null);
@@ -50,18 +51,20 @@ function AdminProductos() {
                 <Row>
                   {productos.map((producto) => (
                     <Col lg={4} key={producto._id}>
-                      <div className="product-card ">
-                        <img
-                          src={producto.images[0]}
-                          alt={producto.nombre}
-                          className="normal-image"
-                        />
-                        <img
-                          src={producto.images[1]}
-                          alt={producto.nombre}
-                          className="hover-image"
-                        />
-                      </div>
+                      <Link to={`/Detalle/${producto._id}`} className="text-decoration-none">
+                        <div className="product-card ">
+                          <img
+                            src={producto.images[0]}
+                            alt={producto.nombre}
+                            className="normal-image"
+                          />
+                          <img
+                            src={producto.images[1]}
+                            alt={producto.nombre}
+                            className="hover-image"
+                          />
+                        </div>
+                      </Link>
 
                       <p>{producto.nombre}</p>
                       <div>

@@ -61,6 +61,8 @@ const ProductProvider = ({ children }) => {
     }
   };
 
+  
+
   const deleteProducts = async (id) => {
     try {
       setLoading(true);

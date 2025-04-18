@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/:gender/:category" element={<VistaProductos />} />
-            <Route path="/Detalle" element={<Detalle />} />
+            <Route path="/Detalle/:id" element={<Detalle />} />
             <Route element={<ProtectedRoutes />}>
               <Route path="/productos" element={<AdminProductos />} />
             </Route>
