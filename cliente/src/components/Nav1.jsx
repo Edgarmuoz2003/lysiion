@@ -45,24 +45,24 @@ function Nav1() {
             >
               <Nav.Link href="/">Home</Nav.Link>
               <NavDropdown title="Mujer" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="/mujer/pijamas">Pijamas</NavDropdown.Item>
-                <NavDropdown.Item href="/mujer/casual">Casual</NavDropdown.Item>
-                <NavDropdown.Item href="/mujer/formal">Formal</NavDropdown.Item>
-                <NavDropdown.Item href="/mujer/deportiva">Deportiva</NavDropdown.Item>
+                <NavDropdown.Item href="/Mujer/Pijamas">Pijamas</NavDropdown.Item>
+                <NavDropdown.Item href="/Mujer/Casual">Casual</NavDropdown.Item>
+                <NavDropdown.Item href="/Mujer/Formal">Formal</NavDropdown.Item>
+                <NavDropdown.Item href="/Mujer/Deportiva">Deportiva</NavDropdown.Item>
               </NavDropdown>
 
               <NavDropdown title="Hombre" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="/hombre/pijamas">Pijamas</NavDropdown.Item>
-                <NavDropdown.Item href="/hombre/casual">Casual</NavDropdown.Item>
-                <NavDropdown.Item href="/hombre/formal">Formal</NavDropdown.Item>
-                <NavDropdown.Item href="/hombre/deportiva">Deportiva</NavDropdown.Item>
+                <NavDropdown.Item href="/Hombre/Pijamas">Pijamas</NavDropdown.Item>
+                <NavDropdown.Item href="/Hombre/Casual">Casual</NavDropdown.Item>
+                <NavDropdown.Item href="/Hombre/Formal">Formal</NavDropdown.Item>
+                <NavDropdown.Item href="/Hombre/Deportiva">Deportiva</NavDropdown.Item>
               </NavDropdown>
 
               <NavDropdown title="Kids" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="/kids/pijamas">Pijamas</NavDropdown.Item>
-                <NavDropdown.Item href="/kids/casual">Casual</NavDropdown.Item>
-                <NavDropdown.Item href="/kids/formal">Formal</NavDropdown.Item>
-                <NavDropdown.Item href="/kids/deportiva">Deportiva</NavDropdown.Item>
+                <NavDropdown.Item href="/Kids/Pijamas">Pijamas</NavDropdown.Item>
+                <NavDropdown.Item href="/Kids/Casual">Casual</NavDropdown.Item>
+                <NavDropdown.Item href="/Kids/Formal">Formal</NavDropdown.Item>
+                <NavDropdown.Item href="/Kids/Deportiva">Deportiva</NavDropdown.Item>
               </NavDropdown>
 
               {authenticated && <Nav.Link href="/productos">Productos</Nav.Link>}
